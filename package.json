@@ -1,0 +1,22 @@
+{
+  "name": "auto-resume-builder",
+  "version": "1.0.0",
+  "description": "AI-powered resume builder - generate professional DOCX resumes from JSON data",
+  "main": "index.js",
+  "bin": {
+    "resume-builder": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "demo": "node demo.js"
+  },
+  "keywords": ["resume", "cv", "docx", "job-search", "career"],
+  "license": "MIT",
+  "dependencies": {
+    "docx": "^8.5.0",
+    "chalk": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
