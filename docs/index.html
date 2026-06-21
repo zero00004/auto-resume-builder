@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Resume Builder - 自动简历生成器</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Microsoft YaHei', sans-serif; background: #f0f4f8; color: #2d3436; line-height: 1.6; }
+        .hero { background: linear-gradient(135deg, #1B3A5C, #2B7A78); color: #fff; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 2.8em; margin-bottom: 16px; }
+        .hero p { font-size: 1.2em; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .card { background: #fff; border-radius: 12px; padding: 30px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .card h2 { color: #1B3A5C; margin-bottom: 16px; font-size: 1.5em; }
+        .card h2::before { content: "▎"; color: #2B7A78; }
+        code { background: #eef; padding: 2px 8px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #1e1e2e; color: #cdd6f4; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 16px 0; font-size: 0.9em; }
+        .btn { display: inline-block; background: #2B7A78; color: #fff; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-size: 1.1em; margin: 8px; transition: 0.3s; }
+        .btn:hover { background: #1B3A5C; transform: translateY(-2px); }
+        .btn-outline { background: transparent; border: 2px solid #fff; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .feature-item { background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 3px solid #2B7A78; }
+        .feature-item h3 { color: #1B3A5C; margin-bottom: 8px; }
+        .donate { text-align: center; padding: 20px; }
+        .donate img { width: 200px; border-radius: 8px; margin: 16px 0; }
+        footer { text-align: center; padding: 40px; color: #636e72; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>📄 Auto Resume Builder</h1>
+        <p>从 JSON 数据一键生成专业 DOCX 简历 · 100% 本地运行 · 永久免费</p>
+        <p style="margin-top:24px">
+            <a href="https://github.com/zero00004/auto-resume-builder" class="btn">🐙 GitHub 仓库</a>
+            <a href="#usage" class="btn btn-outline">📖 使用指南</a>
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>✨ 功能特点</h2>
+            <div class="features">
+                <div class="feature-item"><h3>🎨 专业排版</h3>深蓝主题，ATS 友好，可直接打印</div>
+                <div class="feature-item"><h3>⚡ 即时生成</h3>毫秒级输出，无需等待</div>
+                <div class="feature-item"><h3>🔒 本地运行</h3>数据不上传，隐私安全</div>
+                <div class="feature-item"><h3>🆓 永久免费</h3>开源 MIT 协议，随意使用</div>
+            </div>
+        </div>
+
+        <div class="card" id="usage">
+            <h2>🚀 快速开始</h2>
+            <pre># 1. 克隆仓库
+git clone https://github.com/zero00004/auto-resume-builder.git
+
+# 2. 安装依赖
+npm install
+
+# 3. 生成示例简历
+node index.js --demo
+
+# 4. 用你的数据生成
+node index.js --file resume.json</pre>
+        </div>
+
+        <div class="card">
+            <h2>📝 输入格式</h2>
+            <p>创建 <code>resume.json</code> 文件：</p>
+            <pre>{
+  "name": "张三",
+  "title": "高级软件工程师",
+  "contact": {
+    "phone": "+86 138-0000-0000",
+    "email": "zhangsan@email.com",
+    "location": "北京"
+  },
+  "summary": "8年全栈开发经验...",
+  "experience": [
+    {
+      "company": "ABC 科技",
+      "position": "高级开发",
+      "startDate": "2020-01",
+      "endDate": "至今",
+      "description": ["负责核心架构设计..."]
+    }
+  ],
+  "skills": ["JavaScript", "Python", "React"],
+  "education": [
+    { "institution": "北京大学", "degree": "本科", "field": "计算机" }
+  ]
+}</pre>
+        </div>
+
+        <div class="card">
+            <h2>📦 安装到全局</h2>
+            <pre>npm install -g auto-resume-builder
+
+# 然后随处可用：
+resume-builder --demo</pre>
+        </div>
+
+        <div class="card donate">
+            <h2>☕ 赞赏支持</h2>
+            <p>如果这个工具帮到了你，欢迎请我喝杯咖啡 ❤️</p>
+            <img src="../donate.jpg" alt="微信赞赏码">
+            <p style="color:#636e72;font-size:0.9em">每一份支持都是持续开发的动力 🙏</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>MIT License · Built with ❤️ · <a href="https://github.com/zero00004/auto-resume-builder">GitHub</a></p>
+    </footer>
+</body>
+</html>
