@@ -69,11 +69,15 @@ Create a JSON file with your information:
 
 ---
 
-## Support
+## ☕ 赞赏支持
 
-If this tool helped you, you can support the developer:
+如果这个工具帮到了你，欢迎请我喝杯咖啡 ❤️
 
-**Alipay** / **WeChat Pay** — Please contact d4long@qq.com
+| 微信扫一扫赞赏 | 
+|:--------------:|
+| ![微信赞赏码](donate.jpg) |
+
+所有赞赏都会用于持续改进和开发更多免费工具 🙏
 
 ## License
 
